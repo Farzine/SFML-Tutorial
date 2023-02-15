@@ -17,7 +17,21 @@ int main()
 
 	sf::Sprite sprite(texture); // add the texture image on the sprite to draw
 	sprite.setTexture(texture); // you can also add texture image like this
+
+	sprite.move(sf::Vector2f(40, 50)); // move the sprite image according to axis
+
+	sprite.setScale(sf::Vector2f(2, 2 )); // scaling the x axis and y axis of the sprite
 	
+	//sprite.setRotation(45); // rotate the sprite according the perameter of degree
+
+	//sprite.rotate(50); // we can also rotate the sprite through this function
+
+	//std::cout << sprite.getRotation() << std::endl; // we can read the rotation degree from it
+	
+	//sprite.setOrigin(sf::Vector2f(-600,-300));// set the origin position of the sprite image
+	
+	//sprite.setPosition(sf::Vector2f(300,300));// set the position of the sprite image
+
 	//sprite.setColor(sf::Color(0, 0, 250,10)); // set color by this function,  the parameter of the Color(RED,GREEN,BLUE,OPACITY) function
 
 	//sprite.setTextureRect(sf::IntRect(0, 0, 600, 600));// rearrange sprite size to show in window or you can say resize the showing windows object
