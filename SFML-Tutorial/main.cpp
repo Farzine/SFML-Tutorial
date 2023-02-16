@@ -4,6 +4,55 @@ int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1200, 600), "SFML Tutorial"); // making a window
 	
+	
+	//Tutorial of Drawing Using Vertex arrays
+	/*
+	sf::Vertex point;
+	point.position = sf::Vector2f(3000, 300);
+	point.color = sf::Color::Red;
+	sf::VertexArray line(sf::Lines, 2);
+
+	line[0].position = sf::Vector2f(100, 150);
+	line[0].color = sf::Color::Red;
+
+	//line[1].position = sf::Vector2f(400, 50);
+	//line[1].color = sf::Color::Green;
+
+	line[1] = point;
+
+	sf::VertexArray triangle(sf::Triangles, 3);
+
+	triangle[0].position = sf::Vector2f(20, 50);
+	triangle[0].color = sf::Color::White;
+	
+	triangle[1].position = sf::Vector2f(70, 250);
+	triangle[1].color = sf::Color::Red;
+	
+	triangle[2].position = sf::Vector2f(20, 250);
+	triangle[2].color = sf::Color::Blue;
+	*/
+
+
+	// Tutorial of set shape color & set shape Texture
+	/*
+	sf::CircleShape circle(150);
+	circle.setRadius(200);
+	circle.setPointCount(300);
+	circle.setFillColor(sf::Color::Cyan); // set the color of theshape
+	circle.setFillColor(sf::Color(150, 200, 220,1000)); // we can also add color through inputing value of the parameter(RED,GREEN,BLUE,OPACITY)
+	circle.setOutlineColor(sf::Color::Blue); // set up outline shape color through this function
+	circle.setOutlineThickness(50); // set up outline shape color thikness through this function
+	sf::Texture texture;
+	if (!texture.loadFromFile("flag.png"))
+	{
+		std::cout << "Error has been occured" << std::endl;
+	}
+	circle.setTexture(&texture); // geting the texture into the circle
+	*/
+
+
+	// Adding line tutorial
+	/*
 	sf::RectangleShape line;
 	line.setSize(sf::Vector2f(500, 10)); // creating line according x axis and y axis
 	sf::Vertex line2[] =
@@ -11,6 +60,8 @@ int main()
 		sf::Vertex(sf::Vector2f(250,10)),
 		sf::Vertex(sf::Vector2f(400,100))
 	};
+	*/
+
 	
 	// Adding a Convex Shape
 	/*
@@ -254,8 +305,9 @@ int main()
 		//window.draw(circle); // showing the circle shape
 		//window.draw(polygon); //showing the polygon
 		//window.draw(shape); // showing the convex shape
-		window.draw(line); // draw the line on window
-		window.draw(line2,2,sf::Lines); // drawing line 2
+		//window.draw(line); // draw the line on window
+		//window.draw(line2,2,sf::Lines); // drawing line 2
+		//window.draw(triangle); // Drawing using vertex array
 		window.display();
 	}
 }
