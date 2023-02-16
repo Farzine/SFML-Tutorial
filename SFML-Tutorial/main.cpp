@@ -3,16 +3,19 @@
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1200, 600), "SFML Tutorial"); // making a window
+	
+	
 	// Adding a Convex Shape
-	sf::ConvexShape shape;
-	shape.setPointCount(6);
+	/*
+	sf::ConvexShape shape(6); // we can also initialize here how many setPoint have been used
+	shape.setPointCount(6); // set  how many setPoint have been used
 	shape.setPoint(0, sf::Vector2f(230, 40));
 	shape.setPoint(1, sf::Vector2f(220, 50));
 	shape.setPoint(2, sf::Vector2f(210, 60));
 	shape.setPoint(3, sf::Vector2f(240, 130));
 	shape.setPoint(4, sf::Vector2f(250, 120));
 	shape.setPoint(5, sf::Vector2f(260, 110));
-	//shape.setPoint(6, sf::Vector2f(100, 100));
+	*/
 
 
 	// Adding Regular Shape
@@ -243,7 +246,7 @@ int main()
 		//window.draw(rectangle); // showing the rectangle shape int the window
 		//window.draw(circle); // showing the circle shape
 		//window.draw(polygon); //showing the polygon
-		window.draw(shape); // showing the convex shape
+		//window.draw(shape); // showing the convex shape
 		window.display();
 	}
 }
