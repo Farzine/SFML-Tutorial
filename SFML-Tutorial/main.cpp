@@ -3,9 +3,43 @@
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1200, 600), "SFML Tutorial"); // making a window
+	// Adding a Convex Shape
+	sf::ConvexShape shape;
+	shape.setPointCount(6);
+	shape.setPoint(0, sf::Vector2f(230, 40));
+	shape.setPoint(1, sf::Vector2f(220, 50));
+	shape.setPoint(2, sf::Vector2f(210, 60));
+	shape.setPoint(3, sf::Vector2f(240, 130));
+	shape.setPoint(4, sf::Vector2f(250, 120));
+	shape.setPoint(5, sf::Vector2f(260, 110));
+	//shape.setPoint(6, sf::Vector2f(100, 100));
+
+
+	// Adding Regular Shape
+	/*
+	sf::CircleShape polygon(300, 3); // creating triangle, polygon(parameter,shape vertics)
+	sf::CircleShape polygon(300, 4); // creating rectangle
+	sf::CircleShape polygon(300, 6); // creating hesxagon
+	*/
+
+
+	//Circle Tutorial;
+	/*
+	sf::CircleShape circle(450);// creating circle shape using diameter as parameter
+	circle.setRadius(500); //creating circle shape using radius ae parameter
+	circle.setPointCount(1000); // smoothing the edges of the circle using edge points as parameter
+	*/
+
+
+	//RectAngle Tutorial
+	/*
+	sf::RectangleShape rectangle(sf::Vector2f(600, 400)); // creatiing ractangle shape
+	rectangle.setSize(sf::Vector2f(400, 40)); // we can also resize the rectangle shape through the function
+	*/
+
 
 	// Tutorial of adding sprite
-
+	/*
 	sf::Texture texture; // creating Texture data type for load image
 
 	//texture.setRepeated(true);   // repeated printing the sprite texture image within the setTextureRect area
@@ -18,10 +52,12 @@ int main()
 	sf::Sprite sprite(texture); // add the texture image on the sprite to draw
 	sprite.setTexture(texture); // you can also add texture image like this
 
-	sprite.move(sf::Vector2f(40, 50)); // move the sprite image according to axis
+	//sprite.move(sf::Vector2f(40, 50)); // move the sprite image according to axis
 
-	sprite.setScale(sf::Vector2f(2, 2 )); // scaling the x axis and y axis of the sprite
+	//sprite.setScale(sf::Vector2f(2, 2 )); // scaling the x axis and y axis of the sprite
 	
+	//sprite.scale(sf::Vector2f(2, 2)); // we can also scaling the x axis and y axis of the sprite through this function
+
 	//sprite.setRotation(45); // rotate the sprite according the perameter of degree
 
 	//sprite.rotate(50); // we can also rotate the sprite through this function
@@ -36,6 +72,8 @@ int main()
 
 	//sprite.setTextureRect(sf::IntRect(0, 0, 600, 600));// rearrange sprite size to show in window or you can say resize the showing windows object
 
+	*/
+
 	while (window.isOpen())
 	{
 		sf::Event event; // making an event 
@@ -46,6 +84,7 @@ int main()
 			case sf::Event::Closed:
 				window.close(); // event will not close untill we close it
 				break;
+
 
 				//Tutorial of Key Press
 				/*
@@ -69,6 +108,7 @@ int main()
 					}
 					break;
 				 */
+
 
 
 				 // Tutorial Mouse Event
@@ -170,6 +210,7 @@ int main()
 		}
 		*/
 
+
 		// Live mouse input tutorial
 		/*
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
@@ -180,6 +221,7 @@ int main()
 		std::cout << sf::Mouse::getPosition(window).x << std::endl; // showing the mouse position in according to opened window's x axis
 		sf::Mouse::setPosition(sf::Vector2i(40, 50));// mouse positioning repositioned using this function within window
 		*/
+
 
 		// Live Joystick input tutorial
 		/*
@@ -197,7 +239,11 @@ int main()
 
 
 		window.clear();
-		window.draw(sprite);// showing the sprite image in the window
+		//window.draw(sprite);// showing the sprite image in the window
+		//window.draw(rectangle); // showing the rectangle shape int the window
+		//window.draw(circle); // showing the circle shape
+		//window.draw(polygon); //showing the polygon
+		window.draw(shape); // showing the convex shape
 		window.display();
 	}
 }
