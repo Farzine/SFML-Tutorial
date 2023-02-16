@@ -4,6 +4,13 @@ int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1200, 600), "SFML Tutorial"); // making a window
 	
+	sf::RectangleShape line;
+	line.setSize(sf::Vector2f(500, 10)); // creating line according x axis and y axis
+	sf::Vertex line2[] =
+	{
+		sf::Vertex(sf::Vector2f(250,10)),
+		sf::Vertex(sf::Vector2f(400,100))
+	};
 	
 	// Adding a Convex Shape
 	/*
@@ -247,6 +254,8 @@ int main()
 		//window.draw(circle); // showing the circle shape
 		//window.draw(polygon); //showing the polygon
 		//window.draw(shape); // showing the convex shape
+		window.draw(line); // draw the line on window
+		window.draw(line2,2,sf::Lines); // drawing line 2
 		window.display();
 	}
 }
