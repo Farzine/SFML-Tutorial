@@ -33,6 +33,66 @@ int main()
 	*/
 
 
+	//More complex drawing Usinng Vertex Array
+    /*
+	sf::VertexArray lines(sf::LinesStrip, 3);
+
+	lines[0].position = sf::Vector2f(300, 50);
+	lines[0].color = sf::Color::Red;
+	
+	lines[1].position = sf::Vector2f(50, 40);
+	lines[1].color = sf::Color::Magenta;
+	
+	lines[2].position = sf::Vector2f(150, 140);
+	lines[2].color = sf::Color::Yellow;
+
+
+	sf::VertexArray triangleStrip(sf::TrianglesStrip, 4);
+
+	triangleStrip[0].position = sf::Vector2f(30, 50);
+	triangleStrip[0].color = sf::Color::Red;
+	
+	triangleStrip[1].position = sf::Vector2f(200, 70);
+	triangleStrip[1].color = sf::Color::Yellow;
+	
+	triangleStrip[2].position = sf::Vector2f(30, 150);
+	triangleStrip[2].color = sf::Color::Green;
+	
+	triangleStrip[3].position = sf::Vector2f(330, 150);
+	triangleStrip[3].color = sf::Color::Cyan;
+    */
+
+
+	//Drawing Vertex Array With Texture
+	/*
+	sf::VertexArray quad(sf::Quads, 4);
+
+	quad[0].position = sf::Vector2f(5, 5);
+	quad[1].position = sf::Vector2f(400, 5);
+	quad[2].position = sf::Vector2f(400, 400);
+	quad[3].position = sf::Vector2f(5, 400);
+
+	sf::Texture texture;
+
+	if (!texture.loadFromFile("flag.png"))
+		std::cout << "ERROR" << std::endl;
+
+	quad[0].texCoords = sf::Vector2f(0, 0);
+	quad[1].texCoords = sf::Vector2f(250, 0);
+	quad[2].texCoords = sf::Vector2f(250, 100);
+	quad[3].texCoords = sf::Vector2f(0, 100);
+	
+	//Transforming Vertex array
+	sf::Transform transform;
+
+	transform.rotate(45, sf::Vector2f(100, 100));
+	
+	sf::RenderStates states;
+	states.transform = transform;
+	states.texture = &texture;
+	*/
+
+
 	// Tutorial of set shape color & set shape Texture
 	/*
 	sf::CircleShape circle(150);
@@ -308,6 +368,9 @@ int main()
 		//window.draw(line); // draw the line on window
 		//window.draw(line2,2,sf::Lines); // drawing line 2
 		//window.draw(triangle); // Drawing using vertex array
+		//window.draw(triangleStrip); // Complex drawing using vertex array
+		//window.draw(quad,&texture); // Drawing vertex array with texture
+		//window.draw(quad,states); // transforming vertex array
 		window.display();
 	}
 }
