@@ -4,6 +4,46 @@ int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1200, 600), "SFML Tutorial"); // making a window
 	
+
+	// Tutorial of Moving a View and Rotate a view
+	/*
+	sf::View view(sf::FloatRect(0, 0, 500, 500)); // resize the window according background
+	
+	view.setCenter(sf::Vector2f(30, 30)); // move the images according to the point 
+
+	window.setView(view); // show the view on window
+
+	view.rotate(45); // or you can use 'view.setRotation()' function
+	window.setView(view);
+
+	sf::Sprite background;
+
+	sf::Texture texture;
+
+	if (!texture.loadFromFile("images.png"))
+	{
+		std::cout << "ERROR";
+	}
+	background.setTexture(texture);
+	*/
+
+
+	//Tutorial Introduction to View
+	/*
+	sf::View view(sf::FloatRect(0, 0, 200, 200)); // resize the window according background
+	window.setView(view);
+
+	sf::Sprite background;
+
+	sf::Texture texture;
+
+	if (!texture.loadFromFile("images.png"))
+	{
+		std::cout << "ERROR";
+	}
+	background.setTexture(texture);
+	*/
+
 	
 	//Tutorial of Drawing Using Vertex arrays
 	/*
@@ -371,6 +411,7 @@ int main()
 		//window.draw(triangleStrip); // Complex drawing using vertex array
 		//window.draw(quad,&texture); // Drawing vertex array with texture
 		//window.draw(quad,states); // transforming vertex array
+		//window.draw(background); //Showing introduction of view segment and Moving a view and Rotate
 		window.display();
 	}
-}
+} 
