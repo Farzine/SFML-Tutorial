@@ -1,9 +1,42 @@
 #include<SFML/Graphics.hpp>
+#include<SFML/Audio.hpp>
 #include<iostream>
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1200, 600), "SFML Tutorial"); // making a window
 	
+
+	//Tutorial of playing sound effect
+	/*
+	sf::SoundBuffer buffer;
+	
+	if (!buffer.loadFromFile("a.wav"))
+	{
+		std::cout << "ERROR" << std::endl;
+	}
+
+	sf::Sound sound;
+	sound.setBuffer(buffer);
+	sound.play();
+	*/
+
+
+	//Tutorial of Window resizing with a view
+	/*
+	sf::Sprite background;
+
+	sf::Texture texture;
+
+	if (!texture.loadFromFile("images.png"))
+	{
+		std::cout << "ERROR";
+	}
+	background.setTexture(texture);
+	background.setScale(sf::Vector2f(7, 3)); // scaling the actual size of the sprite
+
+	// one part of this tutorial is in the while loop
+	*/
+
 
 	// Tutorial of Moving a View and Rotate a view
 	/*
@@ -12,6 +45,8 @@ int main()
 	view.setCenter(sf::Vector2f(30, 30)); // move the images according to the point 
 
 	window.setView(view); // show the view on window
+
+	view.zoom(2.0); // zoom in the sprite or you can use 'view.setSize(sf::vector2f(400,600);'
 
 	view.rotate(45); // or you can use 'view.setRotation()' function
 	window.setView(view);
@@ -359,6 +394,16 @@ int main()
 					 break;
 				 */
 
+
+				// tutorial part of window resizing with view 
+				/*
+			case sf::Event::Resized:
+				sf::FloatRect visibleArea(0, 0, event.size.width, event.size.height);
+				window.setView(sf::View(visibleArea));
+				break;
+				*/
+
+
 			}
 		}
 
@@ -412,6 +457,7 @@ int main()
 		//window.draw(quad,&texture); // Drawing vertex array with texture
 		//window.draw(quad,states); // transforming vertex array
 		//window.draw(background); //Showing introduction of view segment and Moving a view and Rotate
+		//window.draw(background); // showing the tutorial of window resizing with a view
 		window.display();
 	}
 } 
