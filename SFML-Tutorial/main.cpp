@@ -5,6 +5,20 @@ int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1200, 600), "SFML Tutorial"); // making a window
 	
+	//Tutorial of Playing a Music and additional audio functionality
+
+	sf::Music music;
+	if (!music.openFromFile("b.ogg"))
+	{
+		std::cout << "ERROR" << std::endl;
+	}
+	music.play();
+
+	music.setPlayingOffset(sf::seconds(12)); // skip the seted seconds
+	
+	music.setVolume(10); // set the volume of audio
+
+	music.stop(); // stop the audio
 
 	//Tutorial of playing sound effect
 	/*
