@@ -3,10 +3,33 @@
 #include<iostream>
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(1200, 600), "SFML Tutorial"); // making a window
+	//sf::RenderWindow window(sf::VideoMode(1200, 600), "SFML Tutorial"); // making a window
 	
-	//Tutorial of Playing a Music and additional audio functionality
 
+	//Tutorial of FullScreen
+
+	sf::RenderWindow window(sf::VideoMode(640, 480), "SFML Tutorial",sf::Style::Fullscreen);
+	bool isFullscreen = true;  // remaining part of this function is in the while loop
+
+
+	//Tutorial of Prevent Window Resizing
+	//sf::RenderWindow window(sf::VideoMode(1200, 600), "SFML Tutorial", sf::Style::Titlebar | sf::Style::Close); // if we use this for making window then it will prevent the resize of window
+
+
+	//Tutorial of Recording Audio
+	/*
+	if (!sf::SoundBufferRecorder::isAvailable())
+	{
+		std::cout << "ERROR" << std::endl;
+	}
+
+	sf::SoundBufferRecorder recorder;
+	recorder.start(); //for this test some function is in the while loop
+	*/
+
+
+	//Tutorial of Playing a Music and additional audio functionality
+	/*
 	sf::Music music;
 	if (!music.openFromFile("b.ogg"))
 	{
@@ -19,6 +42,8 @@ int main()
 	music.setVolume(10); // set the volume of audio
 
 	music.stop(); // stop the audio
+	*/
+
 
 	//Tutorial of playing sound effect
 	/*
@@ -291,7 +316,37 @@ int main()
 		{
 			switch (event.type)
 			{
+			
+			
+			case sf::Event::KeyReleased:
+				switch (event.key.code)
+				{
+				case sf::Keyboard::Return:
+					if (true == isFullscreen)
+					{
+						window.create(sf::VideoMode(640, 480), "SFML Tutorial", sf::Style::Default);
+						isFullscreen = false;
+					}
+					else {
+						window.create(sf::VideoMode(640, 480), "SFML Tutorial", sf::Style::Fullscreen);
+						isFullscreen = true;
+					}
+					break;
+				}
+				break;
+
+
 			case sf::Event::Closed:
+				
+				
+				//Audio recording tutorial
+				/*
+				recorder.stop();
+				const sf::SoundBuffer& buffer = recorder.getBuffer();
+				buffer.saveToFile("recording.ogg");
+				*/
+
+
 				window.close(); // event will not close untill we close it
 				break;
 
