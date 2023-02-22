@@ -7,7 +7,8 @@ int main()
 	
 
 	//Frame rate independent gameplay
-	window.setFramerateLimit(600);
+	/*
+	window.setFramerateLimit(15);// you controll the frame rate through this
 	sf::Sprite sprite;
 	sf::Texture texture;
 	if (!texture.loadFromFile("images.png"))
@@ -16,6 +17,7 @@ int main()
 	}
 	sprite.setTexture(texture);
 	// remaining part of the function is in the while loop
+	*/
 
 
 	// Tutorial of Frame Rate
@@ -549,8 +551,9 @@ int main()
 		clock.restart().asSeconds();
 		*/
 
+
 		//Frame rate independent game play
-		sprite.move(sf::Vector2f(0.1, 0.1));
+		//sprite.move(sf::Vector2f(0.1, 0.1));
 	
 
 		window.clear();
@@ -567,7 +570,7 @@ int main()
 		//window.draw(quad,states); // transforming vertex array
 		//window.draw(background); //Showing introduction of view segment and Moving a view and Rotate
 		//window.draw(background); // showing the tutorial of window resizing with a view
-		window.draw(sprite); // showing the frame rate independent gameplay window
+		//window.draw(sprite); // showing the frame rate independent gameplay window
 		window.display();
 	}
 } 
