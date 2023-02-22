@@ -3,13 +3,37 @@
 #include<iostream>
 int main()
 {
-	//sf::RenderWindow window(sf::VideoMode(1200, 600), "SFML Tutorial"); // making a window
+	sf::RenderWindow window(sf::VideoMode(1200, 600), "SFML Tutorial"); // making a window
 	
 
-	//Tutorial of FullScreen
+	//Frame rate independent gameplay
+	window.setFramerateLimit(600);
+	sf::Sprite sprite;
+	sf::Texture texture;
+	if (!texture.loadFromFile("images.png"))
+	{
+		//handle error
+	}
+	sprite.setTexture(texture);
+	// remaining part of the function is in the while loop
 
+
+	// Tutorial of Frame Rate
+	/*
+	window.setFramerateLimit(60); // or u can set the frame rate through the function
+	sf::Clock clock; // remain part of the function is in the while loop
+	*/
+
+
+	//Hide the mouse cursor on window
+	//window.setMouseCursorVisible(false);
+
+
+	//Tutorial of FullScreen
+	/*
 	sf::RenderWindow window(sf::VideoMode(640, 480), "SFML Tutorial",sf::Style::Fullscreen);
 	bool isFullscreen = true;  // remaining part of this function is in the while loop
+	*/
 
 
 	//Tutorial of Prevent Window Resizing
@@ -317,7 +341,9 @@ int main()
 			switch (event.type)
 			{
 			
-			
+
+			//Tutorial of FullScreen
+			/*
 			case sf::Event::KeyReleased:
 				switch (event.key.code)
 				{
@@ -334,6 +360,8 @@ int main()
 					break;
 				}
 				break;
+				*/
+
 
 
 			case sf::Event::Closed:
@@ -513,6 +541,18 @@ int main()
 		*/
 
 
+		//Frame rate tutorial
+		/*
+		sf::Time time = clock.getElapsedTime();
+		std::cout << 1.0f/time.asSeconds() << std::endl;
+
+		clock.restart().asSeconds();
+		*/
+
+		//Frame rate independent game play
+		sprite.move(sf::Vector2f(0.1, 0.1));
+	
+
 		window.clear();
 		//window.draw(sprite);// showing the sprite image in the window
 		//window.draw(rectangle); // showing the rectangle shape int the window
@@ -527,6 +567,7 @@ int main()
 		//window.draw(quad,states); // transforming vertex array
 		//window.draw(background); //Showing introduction of view segment and Moving a view and Rotate
 		//window.draw(background); // showing the tutorial of window resizing with a view
+		window.draw(sprite); // showing the frame rate independent gameplay window
 		window.display();
 	}
 } 
